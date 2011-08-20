@@ -1,0 +1,33 @@
+#title Solaris Administration - Solaris 系统管理
+<contents>
+* Installation - 安装
+** CD/DVD-based installation - 基于CD/DVD的安装
+** Network-based installation - 基于网络的安装
+* Naming - 主机名和名称服务
+* Storage - 存储
+** Disk Management
+*** Local Disk
+*** Storage Area Network
+**** iSCSI
+**** FC-AL
+** ZFS
+** Solaris Volume Manager
+*** RAID 0
+*** RAID 1
+*** RAID 10
+*** RAID 5
+* Hardening & Optimization - 安全加固与优化
+* SMF - 服务管理框架
+* Networking - 网络
+* Virtualization - 虚拟化
+* Compilation - 编译
+介绍各种常用软件在Solaris下编译的技巧
+
+** Preresquites 编译前提
+** GNU Software - GNU 软件
+** DNS 软件
+** 
+** 辅助程序
+* Tuning - 参数调整
+** /etc/system parameters - /etc/system的参数调整
+** Project (resources limit) - 调整Project的资源限制
