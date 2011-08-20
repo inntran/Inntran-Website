@@ -33,66 +33,105 @@ h3 { margin-bottom: 0px; }
 <dt>
 <a href="#sec1">Installation - 安装</a>
 </dt>
-<dt>
-<a href="#sec2">Naming - 主机名和名称服务</a>
-</dt>
-<dt>
-<a href="#sec3">Storage - 存储</a>
-</dt>
 <dd>
 <dl>
 <dt>
-<a href="#sec4">Disk Management</a>
+<a href="#sec2">CD/DVD-based installation - 基于CD/DVD的安装</a>
 </dt>
 <dt>
-<a href="#sec5">ZFS</a>
-</dt>
-<dt>
-<a href="#sec6">Solaris Volume Manager</a>
+<a href="#sec3">Network-based installation - 基于网络的安装</a>
 </dt>
 </dl>
 </dd>
 <dt>
-<a href="#sec7">Hardening &amp; Optimization - 安全加固与优化</a>
+<a href="#sec4">Naming - 主机名和名称服务</a>
 </dt>
 <dt>
-<a href="#sec8">SMF - 服务管理框架</a>
-</dt>
-<dt>
-<a href="#sec9">Networking - 网络</a>
-</dt>
-<dt>
-<a href="#sec10">Virtualization - 虚拟化</a>
-</dt>
-<dt>
-<a href="#sec11">Compilation - 编译</a>
+<a href="#sec5">Storage - 存储</a>
 </dt>
 <dd>
 <dl>
 <dt>
-<a href="#sec12">Preresquites 编译前提</a>
+<a href="#sec6">Disk Management - 磁盘管理</a>
 </dt>
 <dt>
-<a href="#sec13">GNU Software - GNU 软件</a>
+<a href="#sec7">ZFS</a>
 </dt>
 <dt>
-<a href="#sec14">DNS 软件</a>
-</dt>
-<dt>
-<a href="#sec15">** 辅助程序</a>
+<a href="#sec8">Solaris Volume Manager</a>
 </dt>
 </dl>
 </dd>
 <dt>
-<a href="#sec16">Tuning - 参数调整</a>
+<a href="#sec9">Hardening &amp; Optimization - 安全加固与优化</a>
 </dt>
 <dd>
 <dl>
 <dt>
-<a href="#sec17">/etc/system parameters - /etc/system的参数调整</a>
+<a href="#sec10">Basic services hardening - 基本服务加固</a>
 </dt>
 <dt>
-<a href="#sec18">Project (resources limit) - 调整Project的资源限制</a>
+<a href="#sec11">Disable Unused Services - 禁用不需要的服务</a>
+</dt>
+<dt>
+<a href="#sec12">Hardening SSH - 加固SSH</a>
+</dt>
+<dt>
+<a href="#sec13">Firewall Policy - 防火墙策略</a>
+</dt>
+</dl>
+</dd>
+<dt>
+<a href="#sec14">SMF - 服务管理框架</a>
+</dt>
+<dd>
+<dl>
+<dt>
+<a href="#sec15">SMF and RBAC - 服务管理框架与基于角色的访问控制结合</a>
+</dt>
+<dt>
+<a href="#sec16">SMF configuration examples - 一些Solaris SMF配置文件的例子</a>
+</dt>
+</dl>
+</dd>
+<dt>
+<a href="#sec17">Networking - 网络</a>
+</dt>
+<dt>
+<a href="#sec18">Virtualization - 虚拟化</a>
+</dt>
+<dt>
+<a href="#sec19">Compilation - 编译</a>
+</dt>
+<dd>
+<dl>
+<dt>
+<a href="#sec20">Preresquites 编译前提</a>
+</dt>
+<dt>
+<a href="#sec21">GNU Software - GNU 软件</a>
+</dt>
+<dt>
+<a href="#sec22">DNS Servers - DNS服务器</a>
+</dt>
+<dt>
+<a href="#sec23">Web Servers - Web服务器</a>
+</dt>
+<dt>
+<a href="#sec24">Misc Servers - 辅助功能服务器</a>
+</dt>
+</dl>
+</dd>
+<dt>
+<a href="#sec25">Tuning - 参数调整</a>
+</dt>
+<dd>
+<dl>
+<dt>
+<a href="#sec26">/etc/system parameters - /etc/system的参数调整</a>
+</dt>
+<dt>
+<a href="#sec27">Project (resources limit) - 调整Project的资源限制</a>
 </dt>
 </dl>
 </dd>
@@ -102,72 +141,179 @@ h3 { margin-bottom: 0px; }
 <h2><a name="sec1" id="sec1"></a>
 Installation - 安装</h2>
 
+<h3><a name="sec2" id="sec2"></a>
+CD/DVD-based installation - 基于CD/DVD的安装</h3>
 
-<h2><a name="sec2" id="sec2"></a>
+
+<h3><a name="sec3" id="sec3"></a>
+Network-based installation - 基于网络的安装</h3>
+
+
+
+<h2><a name="sec4" id="sec4"></a>
 Naming - 主机名和名称服务</h2>
 
 
-<h2><a name="sec3" id="sec3"></a>
+<h2><a name="sec5" id="sec5"></a>
 Storage - 存储</h2>
 
-<h3><a name="sec4" id="sec4"></a>
-Disk Management</h3>
+<h3><a name="sec6" id="sec6"></a>
+Disk Management - 磁盘管理</h3>
+
+<p class="first">Using <code>devfsadm -C</code> to detect newly attached devices and <code>format</code> to show
+attached disks</p>
+
+<p>使用 <code>devfsadm -C</code> 检测新添加的设备，使用 <code>format</code> 显示连接的磁盘
+<h4>Local Disk - 本地硬盘</h4></p>
 
 
-<h3><a name="sec5" id="sec5"></a>
+<h4>Direct-attached Disk Array - 外置磁盘阵列</h4>
+
+<h5>SCSI Cable or Fiber Optical - SCSI电缆或光纤</h5>
+
+
+
+<h4>Storage Area Network - 存储区域网络</h4>
+
+<h5>iSCSI - 通过IP网络传输的SCSI协议</h5>
+
+
+<h5>FC-AL - 光纤通道硬盘</h5>
+
+
+
+
+<h3><a name="sec7" id="sec7"></a>
 ZFS</h3>
 
 
-<h3><a name="sec6" id="sec6"></a>
+<h3><a name="sec8" id="sec8"></a>
 Solaris Volume Manager</h3>
 
+<h4>RAID 0</h4>
 
 
-<h2><a name="sec7" id="sec7"></a>
-Hardening &amp; Optimization - 安全加固与优化</h2>
+<h4>RAID 1</h4>
 
 
-<h2><a name="sec8" id="sec8"></a>
-SMF - 服务管理框架</h2>
+<h4>RAID 10</h4>
+
+
+<h4>RAID 5</h4>
+
+
 
 
 <h2><a name="sec9" id="sec9"></a>
+Hardening &amp; Optimization - 安全加固与优化</h2>
+
+<h3><a name="sec10" id="sec10"></a>
+Basic services hardening - 基本服务加固</h3>
+
+<p><code>netservices limited</code> will disable remote access of some services, like <code>dtlogin</code></p>
+
+
+<h3><a name="sec11" id="sec11"></a>
+Disable Unused Services - 禁用不需要的服务</h3>
+
+<p class="first">Most servers do not use &quot;Solaris Management Console&quot;, nor &quot;Web
+Console&quot;<br />
+大部分服务器不需要诸如“Solaris管理控制台”或者“Web控制台”</p>
+
+<p>To shutdown these two Java application<br />
+要关闭这两个Java的应用程序</p>
+
+<p><code>svcadm disable wbem webconsole</code></p>
+
+<p>To disable the GUI<br />
+要禁用图形用户界面</p>
+
+<p><code>svcadm disable cde-login ogl-select fc-cache
+stosreg autoreg cde-calendar-manager stfsloader cde-printinfo smserver</code></p>
+
+
+<h3><a name="sec12" id="sec12"></a>
+Hardening SSH - 加固SSH</h3>
+
+<p class="first">如果要开启Root用户的SSH远程连接，需要改动 <code>/etc/ssh/sshd_config</code> 中的如
+下参数</p>
+
+<p><code>PermitRootLogin</code> '<code>no' -&gt; 'yes'</code></p>
+
+
+<h3><a name="sec13" id="sec13"></a>
+Firewall Policy - 防火墙策略</h3>
+
+<h4>NAT</h4>
+
+<ol>
+<li>Source IP address based port forwarding - 基于源地址的端口转发</li>
+<li>笑嘻嘻笑嘻嘻惺惺惜惺惺</li>
+</ol>
+
+
+
+
+<h2><a name="sec14" id="sec14"></a>
+SMF - 服务管理框架</h2>
+
+<h3><a name="sec15" id="sec15"></a>
+SMF and RBAC - 服务管理框架与基于角色的访问控制结合</h3>
+
+
+<h3><a name="sec16" id="sec16"></a>
+SMF configuration examples - 一些Solaris SMF配置文件的例子</h3>
+
+<ol>
+<li>NGINX</li>
+<li>Oracle RDBMS</li>
+<li>Pure-FTPD</li>
+</ol>
+
+
+
+<h2><a name="sec17" id="sec17"></a>
 Networking - 网络</h2>
 
 
-<h2><a name="sec10" id="sec10"></a>
+<h2><a name="sec18" id="sec18"></a>
 Virtualization - 虚拟化</h2>
 
 
-<h2><a name="sec11" id="sec11"></a>
+<h2><a name="sec19" id="sec19"></a>
 Compilation - 编译</h2>
 
 <p class="first">介绍各种常用软件在Solaris下编译的技巧</p>
 
-<h3><a name="sec12" id="sec12"></a>
+<h3><a name="sec20" id="sec20"></a>
 Preresquites 编译前提</h3>
 
 
-<h3><a name="sec13" id="sec13"></a>
+<h3><a name="sec21" id="sec21"></a>
 GNU Software - GNU 软件</h3>
 
 
-<h3><a name="sec14" id="sec14"></a>
-DNS 软件</h3>
-
-<h3><a name="sec15" id="sec15"></a>
-** 辅助程序</h3>
+<h3><a name="sec22" id="sec22"></a>
+DNS Servers - DNS服务器</h3>
 
 
+<h3><a name="sec23" id="sec23"></a>
+Web Servers - Web服务器</h3>
 
-<h2><a name="sec16" id="sec16"></a>
+
+<h3><a name="sec24" id="sec24"></a>
+Misc Servers - 辅助功能服务器</h3>
+
+
+
+<h2><a name="sec25" id="sec25"></a>
 Tuning - 参数调整</h2>
 
-<h3><a name="sec17" id="sec17"></a>
+<h3><a name="sec26" id="sec26"></a>
 /etc/system parameters - /etc/system的参数调整</h3>
 
 
-<h3><a name="sec18" id="sec18"></a>
+<h3><a name="sec27" id="sec27"></a>
 Project (resources limit) - 调整Project的资源限制</h3>
 
 
